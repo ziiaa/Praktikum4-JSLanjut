@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum4 - JS Lanjut</title>
+</head>
+<body>
+    <h1 id="canva"></h1>
+    <h1 id="tahun"></h1>
+    <h1 id="math"></h1>
+    <h1 id="pi"></h1>
+    <h1 class="text"></h1>
+    <h1 class="query"></h1>
+    <h1 class="nama"></h1>
+    <h1 class="nama_umur"></h1>
+    <h1 class="operator"></h1>
+
+    bilangan 1
+    <input type="text">
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <br>
+    <br>
+    operator
+    <input type="text">
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    <br>
+    <br>
+    bilangan 2
+    <input type="text">
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+
+    </select>
+
+    <script>
+        //1. Object Date ---------------------------------------
+        //Membuat Variable Tanggal
+        const tanggal = new Date();
+        //Menampilkan Tanggal di object document dengan id canva
+        document.getElementById("canva").innerHTML = tanggal;
+        //Menampilkan Tahun dari Variable Tanggal
+        document.getElementById("tahun").innerHTML = tanggal.getFullYear();
+
+        //2. Object Math ---------------------------------------
+        //Buat VAriable Bilangan Pecahan
+        let bilangan = 1.6;
+        //Tampilkan bilangan di selektor dimath
+        document.getElementById("math").innerHTML = bilangan+" dibulatkan menjadi = " +Math.floor(bilangan);
+
+        //Buat Variable konstant
+        let konstant = Math.PI;
+        document.getElementById("pi").innerHTML = konstant;
+
+        //3. Object String ------------------------------------- 
+        const text = "HELLO WORLD!";
+        document.getElementsByClassName("text")[0].innerHTML = text.toLocaleLowerCase();
+
+        document.querySelector('.query').innerHTML = text.toLocaleLowerCase();
+
+        //4. Variable Array ------------------------------------- 
+        let data_nama = ['Baek', 'Lemon'];
+        document.querySelector('.nama').innerHTML = data_nama[1];
+
+        //Array Miltidimensi
+        let data_multi = [
+                        ['Baek',40],
+                        ['Hansel',25],
+                        ['Jayden',30]
+        ];
+        document.querySelector('.nama_umur').innerHTML = 'nama = '+data_multi[1][0]+ '<br> umur = ' +data_multi[1][1]+ ' tahun';
+
+        //5. Operator -------------------------------------
+        let bilangan_1 = 16;
+        let bilangan_2 = 4; 
+        let hasil      = bilangan_1*bilangan_2;
+        document.querySelector('.operator').innerHTML =  bilangan_1 +" x " +bilangan_2+ " = " +hasil;
+
+        console.log(bilangan_1/bilangan_2);
+
+    </script>
+</body>
+</html>
